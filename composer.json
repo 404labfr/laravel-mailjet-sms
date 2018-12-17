@@ -1,0 +1,30 @@
+{
+  "name": "lab404/laravel-mailjet-sms",
+  "description": "Send SMS and SMS Notification via Mailjet for Laravel",
+  "keywords": ["laravel", "laravel5", "sms", "api", "mailjet", "notification", "channel"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marceau Casals",
+      "email": "marceau@404lab.fr"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "illuminate/support": ">=5.3",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lab404\\LaravelMailjetSms\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Lab404\\LaravelMailjetSms\\ServiceProvider"
+      ]
+    }
+  },
+  "prefer-stable": true
+}
