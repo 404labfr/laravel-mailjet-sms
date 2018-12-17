@@ -4,6 +4,7 @@ namespace Lab404\LaravelMailjetSms;
 
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Foundation\Application;
+use Psr\Http\Message\ResponseInterface;
 
 class MailjetSms
 {
@@ -12,29 +13,19 @@ class MailjetSms
     /** @var array */
     protected $config = [];
 
-    /**
-     * MailjetSms constructor.
-     * @param Application $app
-     */
     public function __construct(Application $app)
     {
         $this->app = $app;
         $this->loadDefaultOptions();
     }
 
-    /**
-     * @return $this
-     */
-    protected function loadDefaultOptions()
+    protected function loadDefaultOptions(): MailjetSms
     {
         $this->config = $this->app['config']->get('mailjetsms');
         return $this;
     }
 
-    /**
-     * @return Client
-     */
-    protected function buildHttpClient()
+    protected function buildHttpClient(): Client
     {
         return new Client([
             'allow_redirects' => false,
@@ -56,7 +47,7 @@ class MailjetSms
      * @param string|null $from
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function send($message, $to, $from = null)
+    public function send(string $message, string $to, $from = null): ResponseInterface
     {
         $from = $from ?? $this->config['from'];
         $client = $this->buildHttpClient();

@@ -9,21 +9,12 @@ class MailjetSmsChannel
     /** @var MailjetSms $client */
     protected $client;
 
-    /**
-     * MailjetSmsChannel constructor.
-     * @param MailjetSms $client
-     */
     public function __construct(MailjetSms $client)
     {
         $this->client = $client;
     }
 
-    /**
-     * @param mixed        $notifiable
-     * @param Notification $notification
-     * @return bool
-     */
-    public function send($notifiable, Notification $notification)
+    public function send($notifiable, Notification $notification): bool
     {
         $message = $notification->toMailjetSms($notifiable);
 

@@ -39,7 +39,7 @@ php artisan vendor:publish --provider="Lab404\LaravelMailjetSms\ServiceProvider"
 - Configurez le plugin dans votre `.env` (ou le fichier de config)
 ```
 MAILJETSMS_TOKEN="Votre token Mailjet"
-MAILJETSMS_FROM="Numéro de tel au format E.164"
+MAILJETSMS_FROM="APPNAME"
 ```
 
 ## Usage
@@ -62,8 +62,8 @@ Ce plugin est compatible avec les [notifications Laravel](https://laravel.com/do
 ```php
 namespace App\Notifications;
 
-use Lab404\LaravelMailjetSms\FreeMobileChannel;
-use Lab404\LaravelMailjetSms\FreeMobileMessage;
+use Lab404\LaravelMailjetSms\MailjetSmsChannel;
+use Lab404\LaravelMailjetSms\MailjetSmsMessage;
 use Illuminate\Notifications\Notification;
 
 class ExampleNotification extends Notification
@@ -82,6 +82,29 @@ class ExampleNotification extends Notification
     }
 }
 ```
+
+### API
+
+**Lab404\LaravelMailjetSms\MailjetSmsMessage**
+
+```
+    // Constructeur
+    (new MailjetSmsMessage(string $message, string $to))
+    
+    // Spécifier le destinataire
+        ->to(string $to)
+        
+    // Spécifier l'expéditeur
+        ->from(string $from)
+        
+    // Nettoyer les caractères unicodes
+        ->unicode(bool $unicode = true)
+```
+
+### Un mot sur l'unicode
+
+Par défaut les caractères unicodes sont envoyés dans le SMS. La méthode `unicode(bool $unicode = true)`, permet d'activer ou non l'unicode.
+Une fois désactivé, l'unicode sera nettoyé pour ne laisser place qu'aux [caractères GSM 03.38](https://www.etsi.org/deliver/etsi_gts/03/0338/05.00.00_60/gsmts_0338v050000p.pdf).
 
 ## Support
 
