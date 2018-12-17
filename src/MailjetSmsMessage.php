@@ -10,6 +10,8 @@ class MailjetSmsMessage
     protected $from;
     /** @var string $to */
     protected $to;
+    /** @var boolean $unicode */
+    protected $unicode = true;
 
     public function __construct(string $message = '', string $to = '')
     {
@@ -33,6 +35,12 @@ class MailjetSmsMessage
     public function to(string $to): MailjetSmsMessage
     {
         $this->to = $to;
+        return $this;
+    }
+
+    public function unicode(bool $unicode = true): MailjetSmsMessage
+    {
+        $this->unicode = $unicode;
         return $this;
     }
 
