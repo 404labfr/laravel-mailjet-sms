@@ -70,7 +70,7 @@ class ExampleNotification extends Notification
 {
     public function via($notifiable)
     {
-        return [FreeMobileChannel::class];
+        return [MailjetSmsChannel::class];
     }
     
     public function toMailjetSms($notifiable)
