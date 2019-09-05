@@ -4,8 +4,6 @@ namespace Lab404\LaravelMailjetSms;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    /** @var bool $defer */
-    protected $defer = false;
     /** @var string $configName */
     protected $configName = 'mailjetsms';
 

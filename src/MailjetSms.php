@@ -10,7 +10,7 @@ class MailjetSms
 {
     /** @var Application $app */
     protected $app;
-    /** @var array */
+    /** @var array $config */
     protected $config = [];
 
     public function __construct(Application $app)
@@ -41,12 +41,6 @@ class MailjetSms
         ]);
     }
 
-    /**
-     * @param string $message
-     * @param string $to
-     * @param string|null $from
-     * @return \Psr\Http\Message\ResponseInterface
-     */
     public function send(string $message, string $to, $from = null): ResponseInterface
     {
         $from = $from ?? $this->config['from'];
