@@ -16,10 +16,16 @@ Attention, Mailjet autorise uniquement les SMS transactionnels.
 ## Requirements
 
 - PHP >= 7.2
-- Laravel 6
+- Laravel 6.x or 7.x
 - Un compte Mailjet avec un token SMS
 
-**See [1.0](https://github.com/404labfr/laravel-mailjet-sms/tree/1.0.2) for Laravel 5.3 to 5.8**
+### Laravel support
+
+| Version       | Release       |
+|:-------------:|:-------------:|
+| 6.x, 7.x      | 2.1           |
+| 6.x           | 2.0           |
+| 5.8...5.3     | 1.0           |
 
 ## Installation
 
