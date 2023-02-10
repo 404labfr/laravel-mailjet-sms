@@ -21,22 +21,18 @@ Attention, Mailjet autorise uniquement les SMS transactionnels.
 
 ### Laravel support
 
-| Version       | Release       |
-|:-------------:|:-------------:|
-| 6.x, 7.x      | 2.1           |
-| 6.x           | 2.0           |
-| 5.8...5.3     | 1.0           |
+| Version  | Release |
+|:--------:|:-------:|
+| 8, 9, 10 |   2.2   |
+|   6, 7   |   2.1   |
+|    6     |   2.0   |
+|   5.x    |   1.0   |
 
 ## Installation
 
 - Installation via composer :  
 ```bash
 composer require lab404/laravel-mailjet-sms
-```
-
-- (Facultatif) Ajoutez le ServiceProvider dans **config/app.php** :  
-```php
-Lab404\LaravelMailjetSms\ServiceProvider::class,
 ```
 
 - (Facultatif) Publiez le fichier de config **mailjetsms** :  
@@ -65,7 +61,7 @@ public function myMethod(\Lab404\LaravelMailjetSms\MailjetSms $mailjet) {
 
 ## Notifications
 
-Ce plugin est compatible avec les [notifications Laravel](https://laravel.com/docs/5.7/notifications).
+Ce plugin est compatible avec les [notifications Laravel](https://laravel.com/docs/9.x/notifications).
 
 ```php
 namespace App\Notifications;
@@ -120,7 +116,7 @@ N'hésitez pas à utiliser le gestion d'issus pour vos retours.
 
 ## Auteur
 
-[Marceau Casals](https://www.404lab.fr)
+[Marceau Casals](https://marceau.casals.fr)
 
 ## Licence
 
